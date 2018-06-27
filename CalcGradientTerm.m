@@ -1,12 +1,12 @@
-function [ u_alpha_gradient ] = CalcGradientTerm( Num, Sigma, H, D_delta, R_delta, a, b, c, A, d, q )
+function [ u_alpha_gradient ] = CalcGradientTerm( Dim, Num, Sigma, H, D_delta, R_delta, a, b, c, A, d, q )
 %CALCGRADIENTTERM 计算u_alpha中的Gradient-based Term速度分量，phy_alpha * nij
 %   N为其中矩阵nij，d_delta为(qj-qi)的norm，再求phy_alpha(d_delta)
 %   phy_alpha = ph * phy
 
 %初始化
-u_alpha_gradient = zeros(2, Num);
-u_alpha_gradient_parts = zeros(Num, Num, 2);
-N = zeros(Num, Num, 2);
+u_alpha_gradient = zeros(Dim, Num);
+u_alpha_gradient_parts = zeros(Num, Num, Dim);
+N = zeros(Num, Num, Dim);
 d_delta = zeros(Num, Num);
 ph = zeros(Num, Num);
 phy = zeros(Num, Num);

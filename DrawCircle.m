@@ -6,7 +6,10 @@ l = length(theta);
 Circle1 = x + r*cos(theta);
 Circle2 = y + r*sin(theta);
 
-Circle = [Circle1; Circle2];  %[x;y] 两列
+Circle1Round = roundn(Circle1, -1);
+Circle2Round = roundn(Circle2, -1);
+
+Circle = [Circle1Round; Circle2Round];  %[x;y] 两列
 % c = [123, 14, 52];      %天蓝色
 % plot(Circle1, Circle2, 'c', 'linewidth', 1);
 plot(Circle1, Circle2, '.', 'color', 'r');
